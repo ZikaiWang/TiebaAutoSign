@@ -14,7 +14,7 @@
     
 #### 前置工作      
 1. 克隆此项目 `sudo git clone https://github.com/ZikaiWang/TiebaAutoSign.git`    
-2. 修改 tiebaAutoSign.php 文件, 把要签到的百度账号的`buss`写入第三行的    
+2. 修改 tiebaAutoSign.php 文件, 把要签到的百度账号的`buss`写入第三行指定的位置，具体操作请看注释    
 3. 运行程序，进行签到。如果关注的吧比较多可能会慢一些 `php tiebaAutoSign.php`    
     
     
