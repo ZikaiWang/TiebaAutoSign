@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ch">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>贴吧自动签到</title>
+    <link crossorigin="anonymous" href="./source/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container-fluid" style="background-color: #e5e5e5;text-align: center;">
+    <div class="row">
+        <div class="col-auto">
+            <img alt="logo" src="https://zikai.wang/my-logo-s.jpeg" width="90" height="90">
+        </div>
+        <div class="col">
+            <h1 >百度贴吧自动签到</h1>
+            <p>
+                Authors: <a class="noCal" href="https://zikai.wang">zikai wang</a> |
+                Gitlab: <a href="https://gitlab.csi.miamioh.edu/2023-capstone-projects/Mobile_Game/Mobile-Game-project.git">百度贴吧自动签到</a> | Time <a id="datetime"></a>
+            </p>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row-2 m-2 " style="background: rgba(181, 181, 181, 0.5);border-radius:6px;padding: 5px">
+        <div class="row m-2">
+            <div class="col-11 col-md-5 m-1">
+                <div class="form-check form-switch">
+                    <input checked class="form-check-input" id="store_and_sign_for_tomorrow" onclick="check_state()"
+                           role="switch" type="checkbox">
+                    <label class="form-check-label" for="store_and_sign_for_tomorrow">储存并从明天起每日签到</label>
+                </div>
+            </div>
+            <div class="col-11 col-md-5 m-1">
+                <div class="form-check form-switch">
+                    <input checked class="form-check-input" id="start_right_now" onclick="check_state()"
+                           role="switch" type="checkbox">
+                    <label class="form-check-label" for="start_right_now">立即签到(大概要1分钟,
+                        关注的吧越多会越慢)</label>
+                </div>
+            </div>
+        </div>
+        <div class="row m-2">
+
+            <div class="col-12 col-lg-3 m-1">
+                <div class="input-group">
+                    <span class="input-group-text">身份识别符</span>
+                    <textarea aria-label="With textarea" class="form-control" id="sfsbf"></textarea>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-7 m-1">
+                <div class="input-group">
+                    <span class="input-group-text">BDUSS</span>
+                    <textarea aria-label="With textarea" class="form-control" id="bduss"></textarea>
+                </div>
+            </div>
+
+        </div>
+        <div class="row m-2">
+            <div class="col" id="msg_box">储存数据每天早上签到, 并立刻开始签到</div>
+            <div class="col-4">
+                <button class="btn btn-outline-secondary" id="submit_button" onclick="submit()" type="button">submit
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="row m-2 " style="background: rgba(181, 181, 181, 0.5);border-radius:6px;padding: 5px">
+        <div class="col-auto">
+            <h4>Q&A:</h4>
+        </div>
+        <div class="col">
+            <div class="row">
+                <div class="row">
+                    <h5></h5>
+                </div>
+                <div class="row">
+                    <p></p>
+                </div>
+            </div>
+            <div class="row" style="padding: 10px;">
+                <div class="row">
+                    <h5>Q1. 身份识别符是什么, 我该填什么?</h5>
+                </div>
+                <div class="row">
+                    <p>&emsp;A1: 是你随便起的. BDUSS失效了, 更新时最好输入和上次相同的身份识别符, 这可以帮服务器节约性能. 由程序识别并删除失效的BDUSS很费时间. 当然忘记了也没关系, 重新起个就行, 失效的会自动删除的.</p>
+                </div>
+            </div>
+            <div class="row" style="padding: 10px;">
+                <div class="row">
+                    <h5>Q2. BDUSS是什么?</h5>
+                </div>
+                <div class="row">
+                    <p>&emsp;A2: 是百度旗下产品的通用的Token, 当你给我了这个凭证我才能帮你自动签到.</p>
+                </div>
+            </div>
+            <div class="row" style="padding: 10px;">
+                <div class="row">
+                    <h5>Q3. 安全么?</h5>
+                </div>
+                <div class="row">
+                    <p>&emsp;A3: 我没那么闲, 但把bduss给别人约等于把百度账号密码给别人, 所以当然不安全. 有条件的话可以自己下载代码, 那样才比较安全. 具体教程写在 readme.md 里了</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid bg-light"
+        style="min-height:75px;border-top-style:solid;border-top-color: red;margin-top: 15px">
+    <div class="row  justify-content-md-center">
+        <div class="col-11 col-md-5 m-1 text-center text-md-end">Email: 1621362626@qq.com</div>
+        <div class="col-11 col-md-5 m-1 text-center text-md-start">Phone: +86 15850097635</div>
+        <div class="col-11 col-md-5 m-1 text-center text-md-end"><a href="https://beian.miit.gov.cn/">苏ICP备2022025718号-1</a></div>
+        <div class="col-11 col-md-5 m-1 text-center text-md-start"><img alt="" src="https://pic3.zhimg.com/80/v2-d0289dc0a46fc5b15b3363ffa78cf6c7.png">江公安网备: <a
+                href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=32059002004069">32059002004069</a> 号</div>
+    </div>
+</div>
+
+<script src="https://zikai.wang/basic_zikai_function.js"></script>
+<script src="./003/sign.js"></script>
+<script crossorigin="anonymous" src="./source/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
